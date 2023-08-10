@@ -170,7 +170,7 @@ export class VirtualElementImpl implements VirtualElement {
       const ch = this.childNodes;
       assertEqual(this.$template$.childElementCount, 0, 'children should be empty');
       parent.removeChild(this.open);
-      this.$template$.append(...ch);
+      ch.forEach((node) => parent.appendChild(node));
       parent.removeChild(this.close);
     }
   }
